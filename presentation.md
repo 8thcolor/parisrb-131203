@@ -2,8 +2,6 @@
 
 Christophe Philemotte, Paris.rb 3 Dec 2013
 
----
-
 ### About me
 
 * Developer ([@toch on GitHub](https://github.com/toch), [@_toch on Twitter](https://twitter.com/_toch))
@@ -101,9 +99,7 @@ y = 3 + x
 
 ---
 
-### The more you wait, the more it costs
-
-![technical debt](images/techdebt.png)
+![safety-net](images/safety-net.jpg)
 
 ---
 
@@ -431,3 +427,9 @@ C:  2: Line is too long. [124/79]
 * Setup one thing at a time with your team
 * It's an incremental and team process
 * There are complementary strategies
+
+---
+
+### The more you wait, the more it costs
+
+![technical debt](images/techdebt.png)

@@ -6,9 +6,11 @@ Christophe Philemotte, Paris.rb 3 Dec 2013
 
 ### About me
 
-* Developer
+* Developer ([@toch on GitHub](https://github.com/toch),
+  [@_toch on Twitter](https://twitter.com/_toch))
 * founder and C?O of 8th Color
-* PullReview
+* write on [8th Color Blog](http://blog.8thcolor.com)
+* [PullReview https://pullreview.com](https://pullreview.com)
 
 ---
 

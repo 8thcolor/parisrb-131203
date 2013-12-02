@@ -34,6 +34,11 @@ x = x + 3
 
 ### Ruby is Duck typing
 
+![duck typing](images/ducktyping.jpg)
+from [Geek and Poke](http://geek-and-poke.com/)
+
+---
+
 ```Ruby
 class Duck
   def quack
@@ -96,6 +101,12 @@ y = 3 + x
 
 ---
 
+### The more you wait, the more it costs
+
+![technical debt](images/techdebt.png)
+
+---
+
 ### How to Mitigate?
 
 * Writing Tests
@@ -145,6 +156,14 @@ y = 3 + x
 ### Code Review is a Discussion
 
 ![discussion](images/code-review.png)
+
+---
+
+### Code Review is a Discussion
+
+![good code review](images/code-review2.png)
+
+---
 
 ### Code Review Benefits
 
@@ -202,6 +221,10 @@ y = 3 + x
 * Tracking Progress
 * Reproducible, Invariable
 * Don't Waste Peer Time, Spent time on Complicated.
+
+---
+
+![awkward code review](images/code-review3.png)
 
 ---
 

@@ -7,13 +7,14 @@
 <body>
 <div class="reveal"><div class="slides">
 <section><h2>Safety Nets for Ruby: Tests, Review, and Automation</h2>
-<p>Christophe Philemotte, BRUG 5 Nov 2013</p>
+<p>Christophe Philemotte, Paris.rb 3 Dec 2013</p>
 </section><section>
 <h3>About me</h3>
 <ul>
-<li><p>Developer</p></li>
+<li><p>Developer (<a href="https://github.com/toch">@toch on GitHub</a>, <a href="https://twitter.com/_toch">@_toch on Twitter</a>)</p></li>
 <li><p>founder and C?O of 8th Color</p></li>
-<li><p>PullReview</p></li>
+<li><p>write on <a href="http://blog.8thcolor.com">8th Color Blog</a></p></li>
+<li><p><a href="https://pullreview.com">PullReview https://pullreview.com</a></p></li>
 </ul>
 </section><section>
 <h3>Ruby is Dynamic typing</h3>
@@ -87,6 +88,8 @@ y = 3 + x
 <li><p>Code Review</p></li>
 <li><p>Automation</p></li>
 </ul>
+</section><section>
+<p><img src="images/ryan-tdd.jpg" alt="ryan"></p>
 </section><section>
 <h3>Tests Benefits</h3>
 <ul>
@@ -174,7 +177,6 @@ John Carmack, 2011</p></blockquote>
 <li><p>Rails Best Practices (specific to Rails)</p></li>
 <li><p>Brakeman (Security)</p></li>
 <li><p>Rubocop (Style and Linter)</p></li>
-<li><p>Yard (Documentation)</p></li>
 </ul>
 </section><section>
 <h2>Ruby WC</h2>
@@ -207,6 +209,105 @@ end
      1.1:   ==
      1.1:   assignment
      1.0:   lit_fixnum
+</code></pre>
+</section><section>
+<h2>Flay</h2>
+<pre class="language-Bash"><code>$ gem install flay
+</code></pre>
+<p><em>test.rb</em></p>
+<pre class="language-Ruby"><code>def a
+  op1
+  op2
+  op3
+end
+
+def b
+  op2
+  op3
+  op4
+end
+</code></pre>
+<pre class="language-Bash"><code>$ flay -f -m 4 test.rb
+Total score (lower is better) = 10
+
+1) Similar code found in :defn (mass = 10)
+  test.rb:1
+  test.rb:7
+</code></pre>
+</section><section>
+<h2>Excellent</h2>
+<pre class="language-Bash"><code>$ gem install flay
+</code></pre>
+<pre class="language-Ruby"><code>class ShoppingBasket &lt; ActiveRecord::Base
+
+  def initialize(items = [])
+    self.items = items
+  end
+
+end
+</code></pre>
+<pre class="language-Bash"><code>$ excellent test.rb
+
+  Excellent result:
+
+  test.rb
+    * Line   1: ShoppingBasket does not specify attr_accessible.
+    * Line   1: ShoppingBasket does not validate any attributes.
+    * Line   1: ShoppingBasket defines initialize method.
+
+  Found 3 warnings.
+</code></pre>
+</section><section>
+<h2>Rails Best Practices</h2>
+<pre class="language-Bash"><code>$ gem install rails_best_practices
+$ rails new default
+$ cd default
+$ rails generate scaffold Post name:string title:string content:text
+[...]
+$ rails_best_practices
+Source Codes: |=======================================================================================================================================|
+Source Codes: |=======================================================================================================================================|
+/tmp/default/app/helpers/posts_helper.rb:1 - remove empty helpers
+/tmp/default/app/views/posts/_form.html.erb:1 - replace instance variable with local variable
+/tmp/default/app/views/posts/_form.html.erb:2 - replace instance variable with local variable
+/tmp/default/app/views/posts/_form.html.erb:4 - replace instance variable with local variable
+/tmp/default/app/views/posts/_form.html.erb:7 - replace instance variable with local variable
+/tmp/default/app/controllers/posts_controller.rb:50 - simplify render in controllers
+/tmp/default/app/controllers/posts_controller.rb:66 - simplify render in controllers
+
+Please go to http://rails-bestpractices.com to see more useful Rails Best Practices.
+
+Found 7 warnings.
+</code></pre>
+</section><section>
+<h2>Brakeman</h2>
+<pre class="language-Bash"><code>$ gem install brakeman
+$ brakeman
+[...]
++SECURITY WARNINGS+
+
++------------+-------+--------+-----------------+----------------------------------------------------------------------+
+| Confidence | Class | Method | Warning Type    | Message                                                              |
++------------+-------+--------+-----------------+----------------------------------------------------------------------+
+| High       |       |        | Session Setting | Session secret should not be included in version control near line 7 |
++------------+-------+--------+-----------------+----------------------------------------------------------------------+
+</code></pre>
+</section><section>
+<h2>Rubocop</h2>
+<pre class="language-Bash"><code>$ gem install rubocop
+$ rubocop
+== ./test/functional/posts_controller_test.rb ==
+C:  8: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+C: 14: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+C: 19: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+[...]
+== ./db/seeds.rb ==
+C:  1: Line is too long. [103/79]
+C:  2: Line is too long. [96/79]
+== ./script/rails ==
+C:  2: Line is too long. [124/79]
+
+26 files inspected, 51 offences detected
 </code></pre>
 </section><section>
 <h3>Automated Code Review Tools</h3>

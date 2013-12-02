@@ -1,0 +1,22 @@
+## Refs
+
+* http://www.rubyfleebie.com/ruby-is-dynamically-and-strongly-typed/
+* http://www.dreamincode.net/forums/topic/179748-dynamic-typing/
+* https://en.wikipedia.org/wiki/Ruby_%28programming_language%29
+* https://en.wikipedia.org/wiki/Dynamic_typing#Dynamic_type-checking_and_runtime_type_information
+* http://c2.com/cgi/wiki?DavidThomasOnTheBenefitsOfDynamicTyping
+* http://stackoverflow.com/questions/520228/is-ruby-strongly-or-weakly-typed
+* https://en.wikipedia.org/wiki/Duck_typing#In_Ruby
+* http://en.wikipedia.org/wiki/Test-driven_development
+* http://programmers.stackexchange.com/questions/71654/code-reviews-what-are-the-advantages
+* http://www.slideshare.net/gvwilson/bits-of-evidence-2338367
+* http://programmers.stackexchange.com/questions/15874/tips-on-persuading-boss-that-code-review-is-a-good-thing
+* http://www.devart.com/review-assistant/learnmore/benefits.html
+* http://stackoverflow.com/questions/125367/dynamic-type-languages-versus-static-type-languages
+* http://programmers.stackexchange.com/questions/141485/what-is-the-difference-between-static-code-analysis-and-code-review
+* http://www.nickokiss.com/2009/01/code-reviews-manual-or-automated.html
+* http://stackoverflow.com/questions/322807/which-software-development-practices-provide-the-highest-roi
+* http://sd.jtimothyking.com/2006/07/11/twelve-benefits-of-writing-unit-tests-first/
+* http://dipperstove.com/development/software-testing-benefits.html
+* http://tech.myemma.com/experiences-test-driven-development/
+* http://stackoverflow.com/questions/322807/which-software-development-practices-provide-the-highest-roi

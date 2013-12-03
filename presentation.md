@@ -1,6 +1,6 @@
-## Safety Nets for Ruby: Tests, Review, and Automation
+## Safety Nets for Ruby: Tests, Reviews, and Automation
 
-Christophe Philemotte, Paris.rb 3 Dec 2013
+Christophe Philemotte, Paris.rb 3, Dec 2013
 
 ---
 
@@ -238,7 +238,7 @@ y = 3 + x
 
 ---
 
-## Ruby WC
+## Linter: Ruby WC
 
 *test.rb*
 
@@ -254,7 +254,7 @@ Syntax OK
 
 ---
 
-## Flog
+## Complexity: Flog
 
 ```Bash
 $ gem install flog
@@ -286,7 +286,7 @@ $ flog -d test.rb
 
 ---
 
-## Flay
+## Duplication: Flay
 
 ```Bash
 $ gem install flay
@@ -319,10 +319,10 @@ Total score (lower is better) = 10
 
 ---
 
-## Excellent
+## Code Smells: Excellent
 
 ```Bash
-$ gem install flay
+$ gem install excellent
 ```
 
 ```Ruby
@@ -350,7 +350,7 @@ $ excellent test.rb
 
 ---
 
-## Rails Best Practices
+## Rails: Rails Best Practices
 
 ```Bash
 $ gem install rails_best_practices
@@ -376,7 +376,7 @@ Found 7 warnings.
 
 ---
 
-## Brakeman
+## Security: Brakeman
 
 ```Bash
 $ gem install brakeman
@@ -393,7 +393,7 @@ $ brakeman
 
 ---
 
-## Rubocop
+## Code Style: Rubocop
 
 ```Bash
 $ gem install rubocop
@@ -423,15 +423,15 @@ C:  2: Line is too long. [124/79]
 
 ---
 
+### The more you wait, the more it costs
+
+![technical debt](images/techdebt.png)
+
+---
+
 ### Conclusion
 
 * Start right now
 * Setup one thing at a time with your team
 * It's an incremental and team process
 * There are complementary strategies
-
----
-
-### The more you wait, the more it costs
-
-![technical debt](images/techdebt.png)

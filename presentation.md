@@ -2,6 +2,8 @@
 
 Christophe Philemotte, Paris.rb 3 Dec 2013
 
+---
+
 ### About me
 
 * Developer ([@toch on GitHub](https://github.com/toch), [@_toch on Twitter](https://twitter.com/_toch))

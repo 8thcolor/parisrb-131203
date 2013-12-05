@@ -1,7 +1,16 @@
+GIT
+  remote: git@github.com:toch/slippery.git
+  revision: b30e4a019301c0b9e40b8caa8b5ac20ef565156f
+  branch: feature/local-asset
+  specs:
+    slippery (0.0.2)
+      hexp (~> 0.0)
+      kramdown (~> 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    equalizer (0.0.7)
+    equalizer (0.0.8)
     hexp (0.2.0)
       equalizer (~> 0.0)
       ice_nine (~> 0.8)
@@ -14,13 +23,10 @@ GEM
       mini_portile (~> 0.5.0)
     rake (10.1.0)
     sass (3.2.12)
-    slippery (0.0.1)
-      hexp (~> 0.0)
-      kramdown (~> 1.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   rake
-  slippery
+  slippery!

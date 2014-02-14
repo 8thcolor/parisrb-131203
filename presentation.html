@@ -8,7 +8,7 @@
 <div class="reveal"><div class="slides">
 <section><h2>Safety Nets for Ruby: Tests, Reviews, and Automation</h2>
 <p>Christophe Philemotte, Paris.rb 3, Dec 2013</p>
-</section><section>
+</section><section name="1">
 <h3>About me</h3>
 <ul>
 <li><p>Developer (<a href="https://github.com/toch">@toch on GitHub</a>, <a href="https://twitter.com/_toch">@_toch on Twitter</a>)</p></li>
@@ -16,22 +16,22 @@
 <li><p>write on <a href="http://blog.8thcolor.com">8th Color Blog</a></p></li>
 <li><p><a href="https://pullreview.com">PullReview https://pullreview.com</a></p></li>
 </ul>
-</section><section>
+</section><section name="2">
 <h3>Ruby is Dynamic typing</h3>
 <pre class="language-Ruby"><code>x = false
 x = 3
 x = 'this is a string'
-</code></pre></section><section>
+</code></pre></section><section name="3">
 <h3>and strong typing</h3>
 <pre class="language-Ruby"><code>x = '3'
 x = x + 3
 # TypeError: no implicit conversion of Fixnum into String
 </code></pre>
-</section><section>
+</section><section name="4">
 <h3>Ruby is Duck typing</h3>
 <p><img src="images/ducktyping.jpg" alt="duck typing"><br>
 from <a href="http://geek-and-poke.com/">Geek and Poke</a></p>
-</section><section>
+</section><section name="5">
 <pre class="language-Ruby"><code>class Duck
   def quack
     puts 'Quaaaaaack!'
@@ -53,7 +53,7 @@ john.quack
 # The person imitates a duck.
 </code></pre>
 <p>from Wikipedia</p>
-</section><section>
+</section><section name="6">
 <h3>Getting Weak Typing with Duck Typing</h3>
 <pre class="language-Ruby"><code>class Fixnum
   alias_method :old_plus, :+
@@ -70,32 +70,32 @@ end
 x = '3'
 y = 3 + x
 </code></pre>
-</section><section>
+</section><section name="7">
 <h3>With Great Freedom</h3>
 <ul>
 <li><p>Meaningfull &amp; Concise</p></li>
 <li><p>Flexible &amp; Contract Based</p></li>
 <li><p>Easy DI</p></li>
 </ul>
-</section><section>
+</section><section name="8">
 <h3>Comes Great Risk</h3>
 <ul>
 <li><p>Error Only at Runtime</p></li>
 <li><p>No Static Interface</p></li>
 <li><p>You shouldn&rsquo;t care of the type, but &hellip;</p></li>
 </ul>
-</section><section>
+</section><section name="9">
 <p><img src="images/safety-net.jpg" alt="safety-net"></p>
-</section><section>
+</section><section name="10">
 <h3>How to Mitigate?</h3>
 <ul>
 <li><p>Writing Tests</p></li>
 <li><p>Code Review</p></li>
 <li><p>Automation</p></li>
 </ul>
-</section><section>
+</section><section name="11">
 <p><img src="images/ryan-tdd.jpg" alt="ryan"></p>
-</section><section>
+</section><section name="12">
 <h3>Tests Benefits</h3>
 <ul>
 <li><p>Check the Contract and the User Story</p></li>
@@ -104,7 +104,7 @@ y = 3 + x
 <li><p>Guards against Regression and Edge Cases</p></li>
 <li><p>Speed the dev Cycle</p></li>
 </ul>
-</section><section>
+</section><section name="13">
 <h3>Tests Framework</h3>
 <ul>
 <li><p>Test:Unit</p></li>
@@ -112,10 +112,10 @@ y = 3 + x
 <li><p>Rspec</p></li>
 <li><p>Cucumber</p></li>
 </ul>
-</section><section>
+</section><section name="14">
 <h3>Continuous Integration</h3>
 <p><img src="images/everytime-you-break-the-build.png" alt="kitty"></p>
-</section><section>
+</section><section name="15">
 <h3>Continuous Integration</h3>
 <ul>
 <li><p>Jenkins</p></li>
@@ -123,13 +123,13 @@ y = 3 + x
 <li><p>CodeShip</p></li>
 <li><p>Semapore</p></li>
 </ul>
-</section><section>
+</section><section name="16">
 <h3>Code Review is a Discussion</h3>
 <p><img src="images/code-review.png" alt="discussion"></p>
-</section><section>
+</section><section name="17">
 <h3>Code Review is a Discussion</h3>
 <p><img src="images/code-review2.png" alt="good code review"></p>
-</section><section>
+</section><section name="18">
 <h3>Code Review Benefits</h3>
 <ul>
 <li><p>Knowledge Sharing</p></li>
@@ -139,14 +139,14 @@ y = 3 + x
 <li><p>CoOwnership Reinforcement</p></li>
 <li><p>Shorter Dev/Test Cycles</p></li>
 </ul>
-</section><section>
+</section><section name="19">
 <h3>Code Review Benefits</h3>
 <blockquote><p>60% of all issues raised in the code inspections are not problems that could<br>
 have been uncovered by latter phases of testing or field usage because they<br>
 have little or nothing to do with the visible execution behavior of the<br>
 software.<br>
 (H. Siy and L. Votta 2001)</p></blockquote>
-</section><section>
+</section><section name="20">
 <h3>Code Review Tools</h3>
 <ul>
 <li><p>GitHub PullRequest</p></li>
@@ -154,12 +154,12 @@ software.<br>
 <li><p>Collaborator</p></li>
 <li><p>Crucible</p></li>
 </ul>
-</section><section>
+</section><section name="21">
 <h3>Automated Code Review Benefits</h3>
 <blockquote><p>Automation is necessary. It is common to take a sort of smug satisfaction in<br>
 reports of colossal failures of automatic systems, but for every failure of<br>
 automation, the failures of humans are legion.</p></blockquote>
-</section><section>
+</section><section name="22">
 <h3>Automated Code Review Benefits</h3>
 <blockquote><p>Exhortations to &ldquo;write better code&rdquo; plans for more code reviews, pair<br>
 programming, and so on just don&rsquo;t cut it, especially in an environment with<br>
@@ -167,7 +167,7 @@ dozens of programmers under a lot of time pressure.  The value in catching<br>
 even the small subset of errors that are tractable to static analysis every<br>
 single time is huge.<br>
 John Carmack, 2011</p></blockquote>
-</section><section>
+</section><section name="23">
 <h3>Automated Code Review Benefits</h3>
 <ul>
 <li><p>Short Feedback Time and NOW!</p></li>
@@ -176,9 +176,9 @@ John Carmack, 2011</p></blockquote>
 <li><p>Reproducible, Invariable</p></li>
 <li><p>Don&rsquo;t Waste Peer Time, Spent time on Complicated.</p></li>
 </ul>
-</section><section>
+</section><section name="24">
 <p><img src="images/code-review3.png" alt="awkward code review"></p>
-</section><section>
+</section><section name="25">
 <h3>Automated Code Review Tools</h3>
 <ul>
 <li><p>Ruby Warning (Linter)</p></li>
@@ -189,7 +189,7 @@ John Carmack, 2011</p></blockquote>
 <li><p>Brakeman (Security)</p></li>
 <li><p>Rubocop (Style and Linter)</p></li>
 </ul>
-</section><section>
+</section><section name="26">
 <h2>Linter: Ruby WC</h2>
 <p><em>test.rb</em></p>
 <pre class="language-Ruby"><code>x = 1
@@ -198,7 +198,7 @@ John Carmack, 2011</p></blockquote>
 test.rb:1: warning: assigned but unused variable - x
 Syntax OK
 </code></pre>
-</section><section>
+</section><section name="27">
 <h2>Complexity: Flog</h2>
 <pre class="language-Bash"><code>$ gem install flog
 </code></pre>
@@ -221,7 +221,7 @@ end
      1.1:   assignment
      1.0:   lit_fixnum
 </code></pre>
-</section><section>
+</section><section name="28">
 <h2>Duplication: Flay</h2>
 <pre class="language-Bash"><code>$ gem install flay
 </code></pre>
@@ -245,7 +245,7 @@ Total score (lower is better) = 10
   test.rb:1
   test.rb:7
 </code></pre>
-</section><section>
+</section><section name="29">
 <h2>Code Smells: Excellent</h2>
 <pre class="language-Bash"><code>$ gem install excellent
 </code></pre>
@@ -268,7 +268,7 @@ end
 
   Found 3 warnings.
 </code></pre>
-</section><section>
+</section><section name="30">
 <h2>Rails: Rails Best Practices</h2>
 <pre class="language-Bash"><code>$ gem install rails_best_practices
 $ rails new default
@@ -290,7 +290,7 @@ Please go to http://rails-bestpractices.com to see more useful Rails Best Practi
 
 Found 7 warnings.
 </code></pre>
-</section><section>
+</section><section name="31">
 <h2>Security: Brakeman</h2>
 <pre class="language-Bash"><code>$ gem install brakeman
 $ brakeman
@@ -303,7 +303,7 @@ $ brakeman
 | High       |       |        | Session Setting | Session secret should not be included in version control near line 7 |
 +------------+-------+--------+-----------------+----------------------------------------------------------------------+
 </code></pre>
-</section><section>
+</section><section name="32">
 <h2>Code Style: Rubocop</h2>
 <pre class="language-Bash"><code>$ gem install rubocop
 $ rubocop
@@ -320,17 +320,17 @@ C:  2: Line is too long. [124/79]
 
 26 files inspected, 51 offences detected
 </code></pre>
-</section><section>
+</section><section name="33">
 <h3>Automated Code Review Tools</h3>
 <ul>
 <li><p>CodeClimate</p></li>
 <li><p>PullReview</p></li>
 </ul>
 <p><img src="images/review.png" alt="Review"></p>
-</section><section>
+</section><section name="34">
 <h3>The more you wait, the more it costs</h3>
 <p><img src="images/techdebt.png" alt="technical debt"></p>
-</section><section>
+</section><section name="35">
 <h3>Conclusion</h3>
 <ul>
 <li><p>Start right now</p></li>

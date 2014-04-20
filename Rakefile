@@ -1,7 +1,15 @@
 require 'slippery'
-task :build do
-  Slippery::Document.copy_assets
-  doc = Slippery::Document.new(File.read('presentation.md'))
-  presentation = Slippery::Presentation.new(doc, type: :reveal_js)
-  File.write('presentation.html', presentation.to_html)
+Slippery::RakeTasks.new do |s|
+
+    s.options = {
+      type: :reveal_js,
+      theme: 'serif'
+    }
+
+	  s.processor 'head' do |head|
+	    head <<= H[:title, 'Safety Nets for Ruby: Tests, Reviews, and Automation']
+	  end
+
+    s.include_assets
+    s.add_highlighting
 end
